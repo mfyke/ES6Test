@@ -236,17 +236,47 @@ console.log(Cat.returnBestNumber());
 
 const apiUrl = "https://fcctop100.herokuapp.com/api/fccusers/top/alltime";
 
-function getTop100Campers() {
-	fetch(apiUrl)
-	.then(response=>{
-		response.json()
-	})
-	.catch(err=>{
+// function getTop100Campers() {
+// 	fetch(apiUrl)
+// 	.then(response=>{
+// 		response.json()
+// 	})
+// 	.then(json=>{
+// 		console.log(json);
+// 	})
+// 	.catch(err=>console.log(err));
+// }
 
-	})
+// getTop100Campers();
+
+// async function getTop59Campers() {
+// 	const resp = await fetch(apiUrl);
+// 	const json = await resp.json();
+// 	console.log(json[0]);
+// }
+
+// getTop59Campers();
+
+function resolveAfter3Seconds() {
+	return new Promise(resolve=>{
+		setTimeout(()=>{
+			resolve("resolved")
+		}, 3000);
+	});
 }
 
-getTop100Campers();
+resolveAfter3Seconds().then(data=>console.log(data));
+
+/* Sets */
+
+const exampleSet = new Set([1,1,1,1,4,3,2,12,3,3,2]);
+console.log(exampleSet);
+exampleSet.delete(1);
+console.log(exampleSet);
+exampleSet.clear();
+console.log(exampleSet);
+
+
 
 
 
